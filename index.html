@@ -89,7 +89,7 @@ app.u.loadScript(app.vars.baseURL+"init.js");
 <div id='appView' class='displayNone'>
 <header>
         <div class="logo"><a href="#." onClick="return showContent('homepage',{});"><img src="images/logo.gif" width="269" height="82" alt="ekko Workshop" title="ekko Workshop"></a></div>
-        <nav><a href="#." onClick="return showContent('company',{'show':'about'});">about</a>      <a href="#." onClick="return showContent('company',{'show':'store'});">Store</a>      <a href="#." onClick="return showContent('company',{'show':'contact'});">contact</a></nav>
+        <nav><a href="#." onClick="return showContent('company',{'show':'about'});">about</a>      <a href="#." onClick="return showContent('company',{'show':'store'});">store</a>      <a href="#." onClick="return showContent('company',{'show':'contact'});">contact</a></nav>
         <div class="cart"> <a href="#." onClick="return showContent('cart',{});">your cart (0)</a></div>
         <div class="cb"></div>
     </header>
@@ -143,15 +143,6 @@ app.u.loadScript(app.vars.baseURL+"init.js");
 
 </div>
 
-
-
-
-
-
-
-
-
-
 <!--
 used to organize content when a category is clicked.
 each of the 'sections' are used to load another template. don't change the id.
@@ -203,28 +194,22 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 
 
-<ul>
-<!--
-Used for the product in a product list (prodlist), usually in the body of a category or the homepage.
-the loadingBG class is removed (must be that classname) when the template is translated.
-remember to NOT put the button inside the 'onclick' container or two events will occur onclick.
--->
+<div class="productSec">
 <li id='productListTemplate' class='loadingBG  ' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" >
 
-	<button class='floatRight pointer quickView displayNone' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">Quickview</button>
 
 	<div onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
 		<div class='prodThumbContainer' data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>
-		<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='120' height='120' />
+		<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width="197" height="298" />
 		</div>
 
-		<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
+	<!--	<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
 
 		<h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
 
 
 		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
-<!-- 	<span data-bind='var: reviews(reviews.total); format:text; pretext: from ;posttext: reviews; className:numReviews;'></span> -->
+ 	<span data-bind='var: reviews(reviews.total); format:text; pretext: from ;posttext: reviews; className:numReviews;'></span> -->
 	</div>
 </li>
 
@@ -233,76 +218,17 @@ remember to NOT put the button inside the 'onclick' container or two events will
 for product lists with addToCart feature (accessories, for example)
 container ul should have lineItemProdlist class on it instead of productList
 -->
-<li id='productListTemplateATC' class='loadingBG  ' >
-	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
-
-		<div class='prodThumbContainer floatLeft'>
-		<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='120' height='120' />
-		</div>
-
-		<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
-
-		<h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
-
-		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
-
-		<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodListAddToCartForm marginBottom clearfix' id='accessoriesAddToCartFrm' action='#' onSubmit="app.ext.myRIA.u.handleAddToCart(this.id,{'action':'modal'}); return false;">
-
-			<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
-
-			<input type='submit' value='Add to Cart' data-bind='var: product(pid); format:addToCartButton; extension:store_product;' id='addToCartBtn' class='displayNone ui-button ui-button-text ui-corner-all ui-state-default addToCartButton atcButton' />
-
-			<input type='hidden' value='1' size='3' name='quantity' />
-
-		</form>
-
-	</div>
+<li id='productListTemplateATC' class='loadingBG  displayNone' >
+	
 </li>
 
 
-<li id='productListTemplateBuyerList' class='loadingBG clearfix' >
-	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' >
-
-		<div class='prodThumbContainer floatLeft'>
-			<div class='ui-widget ui-widget-content ui-corner-all'>
-				<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='160' height='160' />
-				<div class='buttonList ui-widget ui-widget-header ui-corner-all alignCenter'>
-
-<button class='ui-state-default ui-corner-all' title='add item to cart' onClick="showContent('product',{'pid':$(this).closest('[data-pid]').attr('data-pid')});">
-<span class="ui-icon ui-icon-cart"></span>
-</button>
-
-<button class='ui-state-default ui-corner-all' title='more information'>
-<span class="ui-icon ui-icon-info"></span>
-</button>
-
-<button class='ui-state-default ui-corner-all' title='write a review for this item' onClick="app.ext.store_crm.u.showReviewFrmInModal({'pid':$(this).closest('[data-pid]').attr('data-pid'),'templateID':'reviewFrmTemplate'});">
-<span class="ui-icon ui-icon-star"></span>
-</button>
-
-<button class='ui-state-default ui-corner-all' title='remove item from list' onClick="app.ext.myRIA.a.removeItemFromBuyerList({'stid':$(this).closest('[data-pid]').attr('data-pid'),'listID':$(this).closest('[data-buyerlistid]').attr('data-buyerlistid')},{'parentID':$(this).closest('li').attr('id')});">
-<span class="ui-icon ui-icon-trash"></span>
-</button>
-
-				</div>
-			</div>
-		</div>
-		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite floatRight' ></span>
-
-		<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
-
-		<h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
-
-
-	</div>
+<li id='productListTemplateBuyerList' class='loadingBG clearfix displayNone' >
+	
 </li>
 
 
-</ul>
-
-
-
-
+</div>
 
 <ul>
 <!--

@@ -650,3 +650,5 @@ footer .footerlink a:hover{ font-size:18px; color:#939598; margin:0 26px 0 0px; 
 
 
 footer .CopyRight{ width:900px; margin:0px 0 44px 0px; color:#7c6e6b; font-size:12px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; text-align:center;}
+.ui-state-default { border:1px solid #D1D3D4 !important; background:none !important; background-color:#D1D3D4;}
+.ui-widget-content { border:1px solid #D1D3D4 !important; }

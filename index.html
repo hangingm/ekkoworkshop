@@ -112,8 +112,10 @@ app.u.loadScript(app.vars.baseURL+"init.js");
 
 <footer>
     <section class="joinBox">
-    <div class="join">join our mailing list <input name="" type="text" class="textfield">
-      <a href="#."><img src="images/enter.gif" alt="Enter" width="77" height="29"></a></div>
+    <div class="join"><form action="#" id="subscribeFrmFooter" name="subscribeFrm" class="newsletterSubscriptionForm" method="get">
+<input name="newsletter-1" value="1" type="hidden">
+join our mailing list <input required="required" value="email address" class="newsSubscribeInput textbox email handleDefault textfield" maxlength="50" size="25" name="login" id="subscribeLoginFooter" type="email"><input class="submit" value="Join Now!" type="image" src="images/enter.gif" style="margin:0 0 -10px 5px;">
+</form></div>
     <div class="follow"><span>follow us!</span> <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.gif" alt="Facebook" title="Facebook" width="20" height="20"></a><a href="http://pinterest.com/" target="_blank"><img src="images/pinterest.gif" width="20" height="20" alt="Pinterest" title="Pinterest"></a><a href="https://twitter.com/" target="_blank"><img src="images/twitter.gif" alt="Twitter" title="Twitter" width="20" height="20"></a><a href="https://plus.google.com/" target="_blank"><img src="images/googleplus.gif" alt="Google Plus" title="Google Plus" width="20" height="20"></a></div>
     </section>
     <div class="cb"></div>

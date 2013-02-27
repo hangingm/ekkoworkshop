@@ -23,8 +23,8 @@ var app = {vars:{
 	"release":"20130206080100",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"",
-	"httpsURL":"https://ssl.zoovy.com/s=www.toynk.zoovy.com/",
-	"httpURL":"http://www.sporks.zoovy.com/"
+	"httpsURL":"https://ssl.zoovy.com/s=www.8e076eac.crackle.zoovy.net/",
+	"httpURL":"http://www.8e076eac.crackle.zoovy.net/"
 	},u:{},rq:[]};
 
 //set base url so images, css, js, etc all load from appropriate location once deployed.
@@ -90,7 +90,7 @@ app.u.loadScript(app.vars.baseURL+"init.js");
 <header>
         <div class="logo"><a href="#." onClick="return showContent('homepage',{});"><img src="images/logo.gif" width="269" height="82" alt="ekko Workshop" title="ekko Workshop"></a></div>
         <nav><a href="#." onClick="return showContent('company',{'show':'about'});">about</a>      <a href="#." onClick="return showContent('company',{'show':'store'});">store</a>      <a href="#." onClick="return showContent('company',{'show':'contact'});">contact</a></nav>
-        <div class="cart"> <a href="#." onClick="return showContent('cart',{});">your cart (0)</a></div>
+        <div class="cart"> <a href="#." onClick="return showContent('cart',{});">your cart (<span class="cartItemCount">0</span>)</a></div>
         <div class="cb"></div>
     </header>
     <div class="clear"></div><br>

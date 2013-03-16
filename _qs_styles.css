@@ -1,4 +1,12 @@
-body{ background:#fff;margin:0px; padding:0px; font-family: "avantGarde Bk BT"; color:#d1d3d4;}
+body{ background:#fff;margin:0px; padding:0px; font-family:Helvetica; color:#777777;}
+@font-face {
+	font-family: 'Conv_AvantGardeBookBT';
+	src: url('fonts/AvantGardeBookBT.eot');
+	src: local('☺'), url('fonts/AvantGardeBookBT.woff') format('woff'), url('fonts/AvantGardeBookBT.ttf') format('truetype'), url('fonts/AvantGardeBookBT.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 a{color:#636466; text-decoration:none;}
 a:hover{color:#636466; text-decoration:underline;}
 #Wrapper{ width:100%; margin:0px; padding:0px;}
@@ -6,8 +14,8 @@ a:hover{color:#636466; text-decoration:underline;}
 header{ width:900px; margin:0px;}
 .logo{ width:270px; float:left; margin:27px 0 13px; }
 .clear { border-bottom:#d2d3d5 solid 1px; clear:both;}
-nav{ float:right; margin:12px 0 2px;}
-nav a{font-size:18px; font-weight:400; margin:0 0 0 30px;}
+nav{ float:right; margin:12px 0 2px; font-family: 'Conv_AvantGardeBookBT',Sans-Serif;}
+nav a{font-size:18px; font-weight:400; margin:0 0 0 30px; font-family: 'Conv_AvantGardeBookBT',Sans-Serif;}
 .cart{ float:right; width:500px; text-align:right; font-size:14px; color:#636466;}
 .midsec{ border-bottom:#d2d3d5 solid 1px;margin:0 0 18px; *margin-bottom:25px; padding:0px;}
 .midsec .productSec{ width:900px; margin:0 auto -8px; padding:0px;}
@@ -179,8 +187,9 @@ and override using classes or id's as needed.
 .noPadOrMargin	{padding:0; margin:0;}
 .fluidList li	{float:left; padding:0; display:inline-block;}
 
-.quickView	{position:absolute; top:5px; right:5px; z-index:1001;} /* jqui modal has zindex 1002 */
-
+.quickView	{position:absolute; bottom:-10px; right:33px; z-index:1001; font-size:16px; padding:3px 7px; font-weight:bold; font-family: 'Conv_AvantGardeBookBT',Sans-Serif;color:#9c918e; background:none; border:0px;} /* jqui modal has zindex 1002 */
+.zform_div span{ width:200px; padding:0 0 0 30px; display:block;}
+.zform_div span input{ display:block; margin:10px 0 -17px -20px; position:relative;}
 /* over rides - height and width ensure each row is the same height. percentages could be used for width */
 .productList li	{ height:250px; position:relative;}
 .lineItemProdlist li	{position:relative; display:block; padding:12px 0; width:100% !important; height:auto !important; border-bottom:1px dotted #efefef;} /* single column product list - used in cart, checkout, etc. productList class is also defined in these cases. */
@@ -279,6 +288,7 @@ so the displayNone class is used, then a .grpType_PARENT class is added if the i
 .prodReviewTemplate li p	{font-weight:normal; margin:0; padding:0;}
 
 .reviewLineItem blockquote	{margin:0 0 0 185px; padding:0;}
+
 
 
 /****** WRITE REVIEW MODAL ******/
@@ -630,8 +640,9 @@ ul.zwarn li	{margin-left:15px;}
 	border: 0 none;
 	width: 160px;
 	}
+
 .cb{ clear:both;}
-footer{ width:900px; margin:0px auto;}
+footer{ width:900px; margin:0px auto; font-family: 'Conv_AvantGardeBookBT',Sans-Serif;}
 footer .joinBox{ margin:0px; padding:0px;}
 footer .joinBox .join{ width:375px; float:left; font-size:16px; color:#939598;}
 footer .joinBox .join .textfield{ width:145px; margin:0 0px 0 3px; *margin:0 0 -5px 0;  padding:0 2px; height:26px; border:#c4c5c5 solid 1px;}

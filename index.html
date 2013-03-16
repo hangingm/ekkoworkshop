@@ -91,8 +91,8 @@ app.u.loadScript(app.vars.baseURL+"init.js");
 <div id='appView' class='displayNone'>
 <header>
         <div class="logo"><a href="#." onClick="return showContent('homepage',{});"><img src="images/logo.gif" width="269" height="82" alt="ekko Workshop" title="ekko Workshop"></a></div>
-        <nav><a href="#." onClick="return showContent('company',{'show':'about'});">about</a>      <a href="#." onClick="return showContent('company',{'show':'store'});">store</a>      <a href="#." onClick="return showContent('company',{'show':'contact'});">contact</a></nav>
-        <div class="cart"> <a href="#." onClick="return showContent('cart',{});">your cart (0)</a></div>
+        <nav><a href="#." onClick="return showContent('company',{'show':'about'});">about</a>   <a href="#." onClick="return showContent('company',{'show':'contact'});">contact</a> <a href="#." onClick="return showContent('cart',{});">your cart (0)</a></nav>
+        <div class="cart"> </div>
         <div class="cb"></div>
     </header>
     <div class="clear"></div><br>
@@ -116,7 +116,7 @@ app.u.loadScript(app.vars.baseURL+"init.js");
     <section class="joinBox">
     <div class="join"><form action="#" id="subscribeFrmFooter" name="subscribeFrm" class="newsletterSubscriptionForm" method="get">
 <input name="newsletter-1" value="1" type="hidden">
-join our mailing list <input required="required" value="email address" class="newsSubscribeInput textbox email handleDefault textfield" maxlength="50" size="25" name="login" id="subscribeLoginFooter" type="email"><input class="submit" value="Join Now!" type="image" src="images/enter.gif" style="margin:0 0 -10px 5px;">
+join our mailing list <input required value="email address" class="newsSubscribeInput textbox email handleDefault textfield" maxlength="50" size="25" name="login" id="subscribeLoginFooter" type="email"><input class="submit" value="Join Now!" type="image" src="images/enter.gif" style="margin:0 0 -10px 5px;">
 </form></div>
     <div class="follow"><span>follow us!</span> <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.gif" alt="Facebook" title="Facebook" width="20" height="20"></a><a href="http://pinterest.com/" target="_blank"><img src="images/pinterest.gif" width="20" height="20" alt="Pinterest" title="Pinterest"></a><a href="https://twitter.com/" target="_blank"><img src="images/twitter.gif" alt="Twitter" title="Twitter" width="20" height="20"></a><a href="https://plus.google.com/" target="_blank"><img src="images/googleplus.gif" alt="Google Plus" title="Google Plus" width="20" height="20"></a></div>
     </section>
@@ -373,13 +373,13 @@ this will likely become more flexible in the future. ###
 	<td class='prodSummaryContainer marginBottom no_underline'>
 	<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 
-	<h5 class='stid' data-bind='var: product(pid); format:text; pretext: Sku: ;'></h5>
+	<!--<h5 class='stid' data-bind='var: product(pid); format:text; pretext: Sku: ;'></h5>
 	<h5 data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: Mfg: ;'></h5>
 	<h5 data-bind='var: product(zoovy:prod_mfgid); format:text; pretext: Mfg ID: ;'></h5>
-
+-->
 
 	<div class='priceContainer'>
-		<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
+		<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Price: ;'></h4>
 		<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
 		<span class='savings'>
 			<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
@@ -411,13 +411,13 @@ this will likely become more flexible in the future. ###
 		<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span>
 	</section>
 
-	<menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
+	<!--<menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
 
 	<a href='#' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Write Review</a>	|
 
 	<a href='#' onClick="app.ext.myRIA.a.add2BuyerList({sku:$(this).parent().attr('data-pid'),'listid':'wishlist'}); return false;">Add to Wishlist</a>
 
-	</menu>
+	</menu>-->
 
 	<span id="buySAFE_Kicker" name="buySAFE_Kicker" type="Kicker Guaranteed Transparent 33 175x30"></span>
 	</td>
@@ -435,7 +435,7 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 		<li class='prodDescTab'><a href='#prodDesc'>Description</a></li>
 		<li class='prodDetailTab displayNone' data-bind='var: product(zoovy:prod_detail); format:showIfSet;'><a href='#prodSpecs'>Specs</a></li>
 		<li class='prodFeaturesTab displayNone' data-bind='var: product(zoovy:prod_features); format:showIfSet;'><a href='#prodFeatures'>Features</a></li>
-		<li class='prodReviewsTab'><a href='#prodReviews'>Reviews</a></li>
+		<!--<li class='prodReviewsTab '><a href='#prodReviews'>Reviews</a></li>-->
 		<li class='prodVideoTab displayNone' data-bind='var: product(youtube:videoid); format:showIfSet;'><a href='#prodVideo'>Video</a></li>
 		<li class='prodAccessoriesTab displayNone' data-bind='var: product(zoovy:accessory_products); format:showIfSet;'><a href='#prodAccessories'>Accessories</a></li>
 	</ul>
@@ -479,9 +479,9 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 	</td>
 </tr>
 </table>
-<div class='prodlistRelatedContainer'>
+<!--<div class='prodlistRelatedContainer'>
 	<ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:related_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; before:<h2>Similar Items</h2>; withReviews:1;"></ul>
-</div>
+</div>-->
 
 
 </div><!-- productTemplate -->
@@ -506,11 +506,11 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 	<td class='prodSummaryContainer marginBottom no_underline'>
 	<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
-	<h6 class='ztable_row_small stid' data-bind='var: product(pid); format:text; className: stid; pretext: Sku#: ;'></h6>
+	<!--<h6 class='ztable_row_small stid' data-bind='var: product(pid); format:text; className: stid; pretext: Sku#: ;'></h6>-->
 
 
 	<div class='priceContainer'>
-		<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
+		<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Price: ;'></h4>
 		<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
 		<span class='savings'>
 			<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
@@ -609,9 +609,9 @@ adding classes is not likely to have any bad effects.
 <ul class='listStyleNone noPadOrMargin'>
 	<li><a href='#company?show=about'  id='navLink_about'>About Us</a></li>
 	<li><a href='#company?show=contact'  id='navLink_contact'>Contact Information</a></li>
-	<li><a href='#company?show=faq'  id='navLink_faq'>FAQ</a></li>
+	<!--<li><a href='#company?show=faq'  id='navLink_faq'>FAQ</a></li>
 	<li><a href='#company?show=payment' id='navLink_payment'>Payment Policy</a></li>
-	<li><a href='#company?show=privacy' id='navLink_privacy'>Privacy Statement</a></li>
+	<li><a href='#company?show=privacy' id='navLink_privacy'>Privacy Statement</a></li>-->
 	<li><a href='#company?show=return' id='navLink_return'>Return Policy</a></li>
 	<li><a href='#company?show=shipping' id='navLink_shipping'>Shipping Information</a></li>
 </ul>
@@ -637,7 +637,7 @@ adding classes is not likely to have any bad effects.
 		</div>
         
         <div id='wholesaleArticle' class='textContentArea article'>
-			<h1>Whole Sale</h1>
+			<h1>Wholesale</h1>
 			<div><p>Lorem ipsum dolor sit amet, saepe donec tempor non aliquam semper amet, id nec neque ante et quam duis. In per enim metus fusce sodales. Montes dignissim. Morbi magnis neque, dictumst non vestibulum at massa pretium, aptent tempore orci leo sem rutrum, curabitur accumsan vel, a enim. Massa pulvinar donec placerat tellus tempus aenean, wisi ut morbi, odio sed aliquam a ornare suspendisse, molestie litora augue massa aliquam nunc magna. Odio cursus eu commodo ante, nibh volutpat dui imperdiet suscipit, augue urna vel faucibus donec, rutrum turpis wisi metus aliquet tempus.</p>
 
 <p>Sit ultricies laoreet vestibulum mi quisque etiam, at mauris pharetra at quo libero adipiscing. Tempor in ligula sem massa interdum a, ornare senectus, aliquam sit dignissim molestie eu, lacinia diam neque in nisl. Pharetra urna massa vivamus eu convallis suscipit, mauris integer aliquam justo at. Incidunt dictum aenean non, condimentum nibh et, a cras sed enim dui varius sed, pellentesque varius donec posuere officia cras pulvinar, tincidunt proin. Nulla ac venenatis, am sed suscipit placerat.</p>

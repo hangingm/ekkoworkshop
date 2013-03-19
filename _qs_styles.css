@@ -290,7 +290,6 @@ so the displayNone class is used, then a .grpType_PARENT class is added if the i
 .reviewLineItem blockquote	{margin:0 0 0 185px; padding:0;}
 
 
-
 /****** WRITE REVIEW MODAL ******/
 #reviewFrm label	{display:block; text-align:right; float:left; width:150px;}
 #reviewsMessage		{width:250px; height:250px;}

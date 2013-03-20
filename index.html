@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"20130319095550",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"20130320093520",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"",
 	"httpsURL":"https://ssl.zoovy.com/s=www.8e72caa.crackle.zoovy.net/",
@@ -91,7 +91,7 @@ app.u.loadScript(app.vars.baseURL+"init.js");
 <div id='appView' class='displayNone'>
 <header>
         <div class="logo"><a href="#." onClick="return showContent('homepage',{});"><img src="images/logo.gif" width="269" height="82" alt="ekko Workshop" title="ekko Workshop"></a></div>
-        <nav><a href="#." onClick="return showContent('company',{'show':'about'});">about</a>   <a href="#." onClick="return showContent('company',{'show':'contact'});">contact</a> <a href="#." onClick="return showContent('cart',{});">your cart (0)</a></nav>
+        <nav><a href="#." onClick="return showContent('company',{'show':'about'});">about</a>   <a href="#." onClick="return showContent('company',{'show':'contact'});">contact</a> <a href="#." onClick="return showContent('cart',{});">your cart (<span class="cartItemCount">0</span>)</a></nav>
         <div class="cart"> </div>
         <div class="cb"></div>
     </header>

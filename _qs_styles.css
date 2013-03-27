@@ -1,4 +1,5 @@
-body{ background:#fff;margin:0px; padding:0px; font-family:Helvetica; color:#777777;}
+body{ background:#fff;margin:0px; padding:0px; font-family:Arial,​Helvetica,​Verdana,​Geneva,​sans-serif; color:#777777;}
+#mainContentArea{font-size: .8em}
 @font-face {
 	font-family: 'Conv_AvantGardeBookBT';
 	src: url('fonts/AvantGardeBookBT.eot');

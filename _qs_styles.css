@@ -162,7 +162,8 @@ and offMenu is toggle off, hiding the change button.
 
 /* pages like search results, company and/or customer are in a two column format. by default, a narrow right w/ nav and the main column w/ content. */
 
-.mainColumn	{width:75%;}
+.mainColumn	{width:75%;font-size: 13px; line-height: 1.5em;}
+.mainColumn h1{ margin:auto; padding:0px;}
 .sideline	{float:right; width:20%; margin:0 0 24px 0px;}
 .sideline a	{padding:5px 0; text-decoration:none; display:block;} /* recommend at least 5px vert padding for mobile/pad */
 
@@ -232,17 +233,21 @@ PRODUCT DETAIL PAGE (productTemplate)
 
 ***************************************************/
 
-.prodViewerContainer	{width:100%;}
+.prodViewerContainer	{width:100%;line-height:1.5em;color: #777777;font-size: 13px;}
 
 .breadAndAddThisContainer	{margin-bottom:8px; padding-bottom:8px; border-bottom:1px dotted #b6b6b6;}
 
 /* primary image and thumbnails */
 .imageContainer	{width:10%; padding-right:24px;}
 .prodViewerContainer .prodThumbs div	{float:left; margin:12px 12px 0 0;}
-
+.ui-widget .ui-widget {
+    color: #777777;
+    font-size: 13px;
+}
 
 .prodSummaryContainer	{width:90%;}
-
+.prodSummaryContainer h1{ margin-bottom:10px;}
+.prodlistRelatedContainer h2{margin:10px 0 5px;}
 
 .tabbedProductContent .prodReviewsTab	{display:block;} /* reviews tab always shows up */
 
@@ -386,7 +391,7 @@ HELP PAGES
 
 /***** CONTACT US ******/
 #contactForm {float:right; margin: 0 0 12px 12px;}
-#contactForm fieldset	{border:1px solid #cccccc; padding:10px;}
+#contactForm fieldset	{border:1px solid #cccccc; padding:10px; margin:0 0 15px;}
 #contactForm div	{margin-bottom:5px}
 #contactForm label	{width:105px; display:inline-block; margin-right:6px; vertical-align:top; text-align:right;}
 #contactForm input, #contactForm textarea	{width:145px;}

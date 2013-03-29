@@ -22,6 +22,7 @@ nav a{font-size:18px; font-weight:400; margin:0 0 0 30px; font-family: 'Conv_Ava
 .midsec{ border-bottom:#d2d3d5 solid 1px;margin:0 0 18px; *margin-bottom:25px; padding:0px;}
 .midsec .productSec{ width:900px; margin:0 auto -8px; padding:0px;}
 .midsec .productSec img{margin:0px 0px 23px 0; padding:0px;}
+.midsec .productSec img.noMargin{margin:0px;}
 .midsec .productSec .last{margin:0px 0px 23px 2px;padding:0px; border:#d1d3d4 solid 1px;}
 
 #appTemplates {display:none;} /* container for all templates. should be hidden */
@@ -164,6 +165,7 @@ and offMenu is toggle off, hiding the change button.
 
 .mainColumn	{width:75%;font-size: 13px; line-height: 1.5em;}
 .mainColumn h1{ margin:auto; padding:0px;}
+.mainColumn h1.marginBottom{ margin-bottom: 12px;}
 .sideline	{float:right; width:20%; margin:0 0 24px 0px;}
 .sideline a	{padding:5px 0; text-decoration:none; display:block;} /* recommend at least 5px vert padding for mobile/pad */
 

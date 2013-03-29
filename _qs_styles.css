@@ -236,6 +236,7 @@ PRODUCT DETAIL PAGE (productTemplate)
 ***************************************************/
 
 .prodViewerContainer	{width:100%;line-height:1.5em;color: #777777;font-size: 13px;}
+.ui-widget-content	{color: #777777;}
 
 .breadAndAddThisContainer	{margin-bottom:8px; padding-bottom:8px; border-bottom:1px dotted #b6b6b6;}
 

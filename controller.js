@@ -1123,7 +1123,13 @@ AUTHENTICATION/USER
 			//while technically this could be spoofed, the API wouldn't accept invalid values
 			return (app.vars.deviceid && app.vars.userid && app.vars.authtoken) ? true : false;
 			},
-
+			
+		buyerIsAuthenticated : function()	{
+			r = false;
+			if(app.data.whoAmI && app.data.whoAmI.cid)	{r = true}
+			else if(app.data.appBuyerLogin && app.data.appBuyerLogin.cid)	{r = true}
+			return r;
+			},
 
 //pretty straightforward. If a cid is set, the session has been authenticated.
 //if the cid is in the cart/local but not the control, set it. most likely this was a cart passed to us where the user had already logged in or (local) is returning to the checkout page.

@@ -2278,7 +2278,28 @@ return $r;
 				}
 			}, //imageURL
 
-
+		imageURLwithAlt : function($tag,data){
+//			app.u.dump('got into displayFunctions.image: "'+data.value+'"');
+			data.bindData.b = data.bindData.b || 'ffffff'; //default to white.
+			if(data.bindData.isElastic) {
+				data.bindData.elasticImgIndex = data.bindData.elasticImgIndex || 0; //if a specific image isn't referenced, default to zero.
+				data.value['%attribs'][data.bindData.image] = data.value['%attribs'][data.bindData.image][data.bindData.elasticImgIndex];
+				};
+			if(data.value['%attribs'][data.bindData.image])	{
+//set some recommended/required params.
+				data.bindData.name = (data.bindData.valuePretext) ? data.bindData.valuePretext+data.value['%attribs'][data.bindData.image] : data.value['%attribs'][data.bindData.image];
+				data.bindData.w = $tag.attr('width');
+				data.bindData.h = $tag.attr('height');
+				data.bindData.tag = 0;
+				$tag.attr('src',app.u.makeImage(data.bindData)); //passing in bindData allows for using
+				if(data.value['%attribs'][data.bindData.alt]){
+					$tag.attr('alt',data.value['%attribs'][data.bindData.alt]); //passing in bindData allows for using
+					}
+				}
+			else	{
+				$tag.css('display','none'); //if there is no image, hide the src. 
+				}
+			}, //imageURL
 
 		stuffList : function($tag,data)	{
 //			app.u.dump("BEGIN renderFormat.stuffList");
